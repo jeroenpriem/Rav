@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap</title>
+    <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,7 +12,6 @@
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -26,6 +25,18 @@
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
+    {{#production}}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {{/production}}
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -43,26 +54,26 @@
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active">
-                <a href="./index.html">Home</a>
+              <li class="{{index}}">
+                <a href="./index.html">{{_i}}Home{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">Gallery</a>
+              <li class="{{getting-started}}">
+                <a href="./getting-started.html">{{_i}}Get started{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">The Making Of</a>
+              <li class="{{scaffolding}}">
+                <a href="./scaffolding.html">{{_i}}Scaffolding{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">Social</a>
+              <li class="{{base-css}}">
+                <a href="./base-css.html">{{_i}}Base CSS{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">About</a>
+              <li class="{{components}}">
+                <a href="./components.html">{{_i}}Components{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">Friends</a>
+              <li class="{{javascript}}">
+                <a href="./javascript.html">{{_i}}JavaScript{{/i}}</a>
               </li>
-              <li class="">
-                <a href="#">Contact</a>
+              <li class="{{customize}}">
+                <a href="./customize.html">{{_i}}Customize{{/i}}</a>
               </li>
             </ul>
           </div>
@@ -70,57 +81,7 @@
       </div>
     </div>
 
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"><img src="assets/img/header.jpg" /></div>
-    <div class="item">…</div>
-    <div class="item">…</div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
-
-<div class="bs-docs-social">
-  <div class="container">
-    <h2>Uniek, druk, origineel, vrolijk, apart, modern, creatief, veelzijdig & kleurrijk.</h2>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="marketing">
-
-    <h1>Ravennah4Art</h1>
-    <p class="marketing-byline">Brighten up your life</p>
-
-    <div class="row-fluid">
-      <div class="span4">
-        <i class="icon-suitcase icon-4x"></i>
-        <h2>Gallery</h2>
-        <p>Bekijk hier mijn werk</p>
-      </div>
-      <div class="span4">
-        <i class="icon-picture icon-4x"></i>
-        <h2>The Making Of</h2>
-        <p>De weg naar het eindresultaat</p>
-      </div>
-      <div class="span4">
-        <i class="icon-camera-retro icon-4x"></i>
-        <h2>About</h2>
-        <p>Wie is Ravennah4Art</p>
-      </div>
-    </div>
-
-  </div>
-
-</div>
+{{>body}}
 
 
 
@@ -128,15 +89,15 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>{{_i}}Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.{{/i}}</p>
+        <p>{{_i}}Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.{{/i}}</p>
+        <p>{{_i}}<a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.{{/i}}</p>
         <ul class="footer-links">
-          <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+          <li><a href="http://blog.getbootstrap.com">{{_i}}Blog{{/i}}</a></li>
           <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">{{_i}}Issues{{/i}}</a></li>
           <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">{{_i}}Changelog{{/i}}</a></li>
         </ul>
       </div>
     </footer>
@@ -168,6 +129,23 @@
     <script src="assets/js/application.js"></script>
 
 
+    {{#production}}
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+    {{/production}}
 
   </body>
 </html>
