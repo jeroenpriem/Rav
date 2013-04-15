@@ -4028,6 +4028,7 @@ input[type="submit"].btn.btn-mini {
   display: table;
   line-height: 0;
   content: "";
+  margin-top: 18px;
 }
 
 .nav-tabs:after,
@@ -4588,7 +4589,7 @@ input[type="submit"].btn.btn-mini {
   position: relative;
   left: 0;
   display: block;
-  float: left;
+  float: right;
   margin: 0 10px 0 0;
 }
 
