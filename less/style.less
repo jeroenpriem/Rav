@@ -9,8 +9,6 @@
 @import "site/nav.less";			//Nav styling	
 @import "site/backgrounds.less";	//Background images and colors	
 @import "site/responsive.less";		//Gouwestad Bootstrap Responsive customizations
-@import "site/signup.less";			//Mailchimp signup formulier
-@import "site/showcase.less";		//Responsive showcase
 @import "site/animations.less";		//Animations
 
 
@@ -18,7 +16,28 @@
 
 
 .jumbotron {
-	background: url("../img/header.jpg") no-repeat center center fixed;
+	background: url("../img/header.jpg") no-repeat bottom right fixed;
+}
+
+.header {
+	padding: 5em;
+}
+
+.schilderijen {
+	padding-bottom: 8em;
+	margin-top: -5em;
+}
+
+.voorstellen {
+	background: url("../img/rotterdam.jpg") no-repeat center center fixed;
+	color: #fff;
+	padding: 8em;
+	.profiel {
+		img {
+		max-width: 80%;
+		height: auto;
+		}
+	}
 }
 
 .special {
