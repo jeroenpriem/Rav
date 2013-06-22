@@ -1,0 +1,15 @@
+.transition(@transitionspeed){
+	-webkit-transition: all @transitionspeed ease;
+	-moz-transition: all @transitionspeed ease;
+	-o-transition: all @transitionspeed ease;
+	-ms-transition: all @transitionspeed ease;
+	transition: all @transitionspeed ease;
+}
+
+.transitiondelay(@transitionspeed, @delay){
+	-webkit-transition: @delay all @transitionspeed ease;
+	-moz-transition: @delay all @transitionspeed ease;
+	-o-transition: @delay  all @transitionspeed ease;
+	-ms-transition:  @delay all @transitionspeed ease;
+	transition: @delay  all @transitionspeed ease;
+}

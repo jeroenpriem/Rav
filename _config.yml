@@ -1,0 +1,4 @@
+permalink: 	pretty
+port: 4000
+baseurl:    /
+url: http://localhost:4000

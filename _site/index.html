@@ -1,10 +1,130 @@
----
-layout:         default
-title:          Homepage
-tagline:        Of this awesome website
-description:    Wow this really is an awesome website
-keywords:       Awesome, website, keywords
----
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Homepage | Of this awesome website</title>
+        <meta name="description" content="Wow this really is an awesome website">
+        <meta name="keywords" content="Awesome, website, keywords">
+        <meta name="viewport" content="width=device-width">
+
+        <!--
+   
+       _____  ____  _    ___          ________  _____ _______       _____  
+      / ____|/ __ \| |  | \ \        / /  ____|/ ____|__   __|/\   |  __ \ 
+     | |  __| |  | | |  | |\ \  /\  / /| |__  | (___    | |  /  \  | |  | |
+     | | |_ | |  | | |  | | \ \/  \/ / |  __|  \___ \   | | / /\ \ | |  | |
+     | |__| | |__| | |__| |  \  /\  /  | |____ ____) |  | |/ ____ \| |__| |
+      \_____|\____/ \____/    \/  \/   |______|_____/   |_/_/    \_\_____/ 
+                                                                  
+          |\/|  _. ._ |   _ _|_ o ._   _    ()    |\/|  _   _| o  _. 
+          |  | (_| |  |< (/_ |_ | | | (_|   (_X   |  | (/_ (_| | (_| 
+                                       _|                            
+                             
+                              © www.gouwestad.com
+                         
+                           WHY ARE YOU LOOKING HERE? ;)
+        -->
+
+        <!-- Stylesheets -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://localhost:4000/js/vendor/css/flexslider.css">
+        <link rel="stylesheet" href="http://localhost:4000/less/style.css">
+
+        <!-- Webfonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <script src="http://localhost:4000/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <script src="http://localhost:4000/js/vendor/morphingdevice.js"></script>
+        <script>
+          var el = document.querySelector( '.md-slider' ),
+            settings = {
+              autoplay : true,
+              interval : 3000,
+              devices : [ 
+                { cName : 'md-device-1', canRotate : false, imgsrc : '../img/responsive/site1.jpg' },
+                { cName : 'md-device-2', canRotate : false, imgsrc : '../img/responsive/site2.jpg' },
+                { cName : 'md-device-3', canRotate : true, imgsrc : '../img/responsive/site3.jpg', rotatedsrc : '../img/responsive/site3r.jpg' },
+                { cName : 'md-device-4', canRotate : true, imgsrc : '../img/responsive/site4.jpg', rotatedsrc : '../img/responsive/site4r.jpg' }
+              ]
+            },
+            devicesTotal = settings.devices.length,
+            ds = MorphingDevice( el, settings );
+
+          // create navigation triggers
+          var nav = document.createElement( 'nav' );
+          for( var i = 0; i < devicesTotal; ++i ) {
+
+            var trigger = document.createElement( 'a' );
+            trigger.className = i === 0 ? 'md-current' : '';
+            trigger.setAttribute( 'href', '#' );
+            trigger.setAttribute( 'pos', i );
+            trigger.onclick = function( event ) {
+
+              ds.stopSlideshow();
+              var pos = Number( event.target.getAttribute( 'pos' ) );
+              if( pos === ds.getCurrent() ) {
+                return false;
+              }
+              ds.updateCurrentTrigger( event.target );
+              ds.setCurrent( pos );
+              ds.changeDevice();
+              return false;
+
+            };
+            nav.appendChild( trigger );
+
+          }
+          el.appendChild( nav );
+
+          if( settings.autoplay ) {
+            ds.startSlideshow();
+          }
+        </script>
+    </head>
+
+    <body id="">
+    <!--[if lt IE 9]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    
+
+	<div class="body-overlay">
+	</div>
+
+	<!--<div class="navbar">
+	 	<a class="navbar-brand" href="#">Title</a>
+		<ul class="nav nav-pills">
+		    <li class="active"><a href="#">Home</a></li>
+		    <li><a href="#">Link</a></li>
+		    <li><a href="#">Link</a></li>
+		</ul>
+	</div>-->
+
+	<div>
+		<a href="#" class="nav-btn" id="nav-btn">
+			<i class="icon-reorder"></i>
+		</a>
+	</div>
+	<div class="nav-side" id="slide-nav">
+		<a href="#" class="nav-btn-side" id="nav-btn-close">
+			<i class="icon-remove"></i>
+		</a>
+		<h3>Gouwestad sites</h3>
+		<ul class="nav nav-pills nav-stacked">
+		    <li><a href="#"><i class="icon-thumbs-up"></i>  Een nieuw soort <strong>website</strong></a></li>
+		    <li><a href="#"><i class="icon-compass"></i> Gericht op <strong>resultaat</strong></a></li>
+		    <li><a href="#"><i class="icon-pencil"></i> Handgemaakt <strong>design</strong></a></li>
+		    <li><a href="#"><i class="icon-bar-chart"></i> Meten is <strong>weten</strong></a></li>
+		    <li><a href="#"><i class="icon-eur"></i> Betaalbaar en <strong>snel</strong></a></li>
+		</ul>
+	</div>
+
 
     <header>
         <div class="container">
@@ -50,7 +170,7 @@ keywords:       Awesome, website, keywords
                 <!--<div class="block-overlay">
                     <div class="row">
                         <div class="col-lg-4">
-                            <img src="{{ site.url }}/img/mobile-analytics.png">
+                            <img src="http://localhost:4000/img/mobile-analytics.png">
                         </div>
                         <div class="col-lg-8">
                             <p>Grow your email database by making it easy for your visitors to sign up on your site. A Flip Form or FlipJack can start your relationship off on the right foot.</p>
@@ -307,3 +427,43 @@ keywords:       Awesome, website, keywords
     </section>
 
 
+
+
+            <footer>
+                <div class="container text-center">
+                    <p>&copy; Company 2012</p>
+                </div>
+            </footer>
+            
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="http://localhost:4000/js/vendor/bootstrap.min.js"></script>
+
+        <script src="http://localhost:4000/js/main.js"></script>
+
+                <!-- Slider script & styles -->
+         <script src="http://localhost:4000/js/vendor/jquery.flexslider-min.js"></script>
+         <script src="http://localhost:4000/js/vendor/waypoints.min.js"></script>
+        <!-- Start the slider up -->
+        <script type="text/javascript" charset="utf-8">
+          $(window).load(function() {
+            $('.flexslider').flexslider({
+              animation: "slide",
+              slideshow: false,
+              controlNav: false,
+            });
+          });
+        </script>
+
+        <!-- Google Analytics -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+
+//Import Bootstrap styles
+@import "bootstrap/bootstrap.less";
+
+//Import Site less files
+@import "site/variables.less";		//Site specific variables
+@import "site/layout.less"; 		//Basic layout/HTML5 stuff such as <article> and <section>
+@import "site/typography.less";		//Typography settings
+@import "site/nav.less";			//Nav styling	
+@import "site/backgrounds.less";	//Background images and colors	
+@import "site/responsive.less";		//Gouwestad Bootstrap Responsive customizations
+@import "site/signup.less";			//Mailchimp signup formulier
+@import "site/showcase.less";		//Responsive showcase
+@import "site/animations.less";		//Animations
+
+
+//Site specific story styles
+
+
+.jumbotron{
+	background: none;
+	h1 {
+		color: @brand-tertiary;
+	}
+}
+
+
+// Introductie sectie styles
+.introduction{
+	.gray();
+	.blocks{
+		max-width: 75%; //Moet vanaf tablet worden
+		margin: 0 auto;
+		box-shadow: 0 0 5px rgba(0,0,0,0.4);
+		position: relative;
+		overflow: hidden;
+		perspective: 1000px;
+    	perspective-origin: 50% 25%;
+		& .col-lg-4{
+			padding: 3em 0;
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			border-right:1px solid rgba(0,0,0,0.1);
+			border-top: 1px solid rgba(255,255,255,0.2);
+		}
+		.block-overlay{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			z-index: -1;
+			.opacity(0.6);
+			-moz-transform-style: preserve-3d;
+		    transition: all 0.3s ease;
+		    -moz-transform: translateZ(-1500px);
+		    transform: translateZ(-1500px);
+			&.open{
+				.transition(0.4s);
+				.opacity(1);
+				z-index: 10;
+				-webkit-transform: translateZ(0px);
+				-moz-transform: translateZ(0px);
+				-o-transform: translateZ(0px);
+				-ms-transform: translateZ(0px);
+				transform: translateZ(0px);
+			}
+			p{
+				padding: 3em;
+				color: @gray;
+			}
+		}
+	}
+	.blocks > .col-12{
+		min-height: 6em;
+		.graylighter();
+		color: @gray;
+	}
+}
+
+.special{
+	.graylighter();
+}
+
+.showcase{
+	overflow: hidden;
+}
+
+.flexslider{
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.bottom {
+	margin-bottom: -3em;
+}
+
+.vertical-center {
+	vertical-align: middle;
+}
+
+//Portfolio section styles
+// animaties nog toevoegen aan animations.less bestand
+.portfolio{
+	figure{
+		position: relative;
+		overflow: hidden;
+		margin: 2em 0;
+		background: #ccc;
+		img{
+			-webkit-transition: -webkit-transform 0.4s;
+			-webkit-transition: -webkit-transform 0.4s;
+			-webkit-transition: -webkit-transform 0.4s;
+			-webkit-transition: -webkit-transform 0.4s;
+			transition: transform 0.4s;
+		}
+		figcaption{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 0.3em 1em;
+			border-top: 1px solid rgba(255,255,255,0.1);
+			padding: 0.3em 1em;
+			border-top: rgba(255,255,255,0.1);
+			font-size: 80%;
+			background: @brand-info;
+			color: #fff;
+			.translate(0,102%);
+			box-shadow: 0 0 2px rgba(0,0,0,0.1);
+
+			-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+			-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+			-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+			-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+			transition: transform 0.4s, opacity 0.1s 0.3s;
+			h5{
+				margin-bottom: 0;
+			}
+			span{
+				font-style: italic;
+			}
+		}
+		//hover styles
+		&:hover{
+			img{
+				.translate(0,-2em);
+			}
+			figcaption{
+				.translate(0,0);
+				-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+				-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+				-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+				-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+				transition: transform 0.4s, opacity 0.1s;
+			}
+		}
+	}
+}
